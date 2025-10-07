@@ -1,6 +1,7 @@
 package de.agiehl.bgg.lightspeedarena;
 
 import com.itextpdf.io.font.constants.StandardFonts;
+import com.itextpdf.io.source.ByteArrayOutputStream;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.events.Event;
@@ -14,6 +15,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
+import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
@@ -33,8 +35,10 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.MessageFormat;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Map;
 
 public class PdfGenerator {
 
@@ -67,8 +71,9 @@ public class PdfGenerator {
         Document document = new Document(pdf);
         document.setMargins(20, 20, 20, 20); // Smaller margins for more space
 
-        // Add Header and Footer
-        pdf.addEventHandler(PdfDocumentEvent.END_PAGE, new HeaderFooterHandler(messages));
+        // Add Header and Footer placeholders
+        HeaderFooterHandler handler = new HeaderFooterHandler(messages);
+        pdf.addEventHandler(PdfDocumentEvent.START_PAGE, handler);
 
         // Add Comets
         if (gameData.getComets() != null && !gameData.getComets().isEmpty()) {
@@ -89,6 +94,9 @@ public class PdfGenerator {
             }
             addItemsToDocument(document, gameData.getFactions());
         }
+
+        // Now that all pages are added, fill in the total page number placeholders
+        handler.writeTotal(pdf);
 
         document.close();
         logger.info("PDF created successfully for language '{}' at '{}'", language, dest);
@@ -199,6 +207,7 @@ public class PdfGenerator {
 
     private static class HeaderFooterHandler implements IEventHandler {
         private final ResourceBundle messages;
+        private final Map<Integer, PdfFormXObject> totalPagePlaceholders = new HashMap<>();
 
         public HeaderFooterHandler(ResourceBundle messages) {
             this.messages = messages;
@@ -206,43 +215,67 @@ public class PdfGenerator {
 
         @Override
         public void handleEvent(Event event) {
-            PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
-            PdfDocument pdf = docEvent.getDocument();
-            PdfPage page = docEvent.getPage();
-            int pageNum = pdf.getPageNumber(page);
-            Rectangle pageSize = page.getPageSize(); // Corrected type to Rectangle
-            PdfCanvas pdfCanvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdf);
+            if (event.getType().equals(PdfDocumentEvent.START_PAGE)) {
+                addHeaderAndFooterPlaceholders((PdfDocumentEvent) event);
+            }
+        }
 
+        private void addHeaderAndFooterPlaceholders(PdfDocumentEvent docEvent) {
             try {
+                PdfDocument pdf = docEvent.getDocument();
+                PdfPage page = docEvent.getPage();
+                int pageNum = pdf.getPageNumber(page);
+                Rectangle pageSize = page.getPageSize();
+                PdfCanvas pdfCanvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdf);
+
                 PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
-                float yFooter = pageSize.getBottom() + 20;
-                float yHeader = pageSize.getTop() - 20;
+                float yFooter = pageSize.getBottom() + 10; // Adjusted for smaller margins
+                float yHeader = pageSize.getTop() - 15; // Adjusted for smaller margins
                 float xCenter = pageSize.getWidth() / 2;
 
-                // We calculate total pages here to ensure it's up-to-date
-                int totalPages = pdf.getNumberOfPages();
-
+                // Header
                 pdfCanvas.beginText()
                         .setFontAndSize(font, 12)
-                        .moveText(xCenter - (messages.getString("header.title").length() * 3), yHeader) // Simple centering logic
+                        .moveText(xCenter - (messages.getString("header.title").length() * 3), yHeader) // Simple centering
                         .showText(messages.getString("header.title"))
                         .endText();
 
-                String pageText = MessageFormat.format(messages.getString("footer.page"), pageNum, totalPages);
+                // Footer
                 pdfCanvas.beginText()
                         .setFontAndSize(font, 8)
-                        .moveText(pageSize.getLeft() + 36, yFooter)
+                        .moveText(pageSize.getLeft() + 20, yFooter)
                         .showText(messages.getString("footer.copyright"))
-                        .endText()
-                        .beginText()
-                        .setFontAndSize(font, 8)
-                        .moveText(pageSize.getRight() - 36 - 60, yFooter)
-                        .showText(pageText)
                         .endText();
+
+                // Page X of Y
+                String pageOfText = MessageFormat.format(messages.getString("footer.page"), pageNum, " "); // "Page X of "
+                pageOfText = pageOfText.substring(0, pageOfText.length() - 1); // Remove trailing space if any
+                float pageTextWidth = font.getWidth(pageOfText, 8);
+                float totalPlaceholderWidth = font.getWidth("000", 8); // Estimate width for total pages
+
+                float xPageNum = pageSize.getRight() - 20 - totalPlaceholderWidth;
+                pdfCanvas.beginText().setFontAndSize(font, 8).moveText(xPageNum - pageTextWidth, yFooter).showText(pageOfText).endText();
+
+                PdfFormXObject placeholder = new PdfFormXObject(new Rectangle(0, 0, totalPlaceholderWidth, 10));
+                pdfCanvas.addXObjectAt(placeholder, xPageNum, yFooter - 1); // -1 for vertical alignment
+                totalPagePlaceholders.put(pageNum, placeholder);
 
                 pdfCanvas.release();
             } catch (IOException e) {
-                logger.error("Error adding header/footer", e);
+                logger.error("Error adding header/footer placeholder", e);
+            }
+        }
+
+        public void writeTotal(PdfDocument pdf) {
+            int totalPages = pdf.getNumberOfPages();
+            try {
+                PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+                for (PdfFormXObject xObject : totalPagePlaceholders.values()) {
+                    PdfCanvas canvas = new PdfCanvas(xObject, pdf);
+                    canvas.beginText().setFontAndSize(font, 8).moveText(0, 1).showText(String.valueOf(totalPages)).endText();
+                }
+            } catch (IOException e) {
+                logger.error("Error writing total page count", e);
             }
         }
     }
