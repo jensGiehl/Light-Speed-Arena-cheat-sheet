@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Locale;
-import java.util.ResourceBundle;
 
 public class Main {
 
@@ -36,7 +35,14 @@ public class Main {
             // Generate a PDF for each supported language
             for (Locale locale : supportedLocales) {
                 logger.info("Generating PDF for language: {}", locale.getLanguage());
-                ResourceBundle messages = ResourceBundle.getBundle("messages", locale);
+
+                String messagesFile = "/messages_" + locale.getLanguage() + ".json";
+                InputStream messagesIs = Main.class.getResourceAsStream(messagesFile);
+                if (messagesIs == null) {
+                    logger.error("{} not found in resources!", messagesFile);
+                    continue; // Skip to next language
+                }
+                LocalizedData messages = mapper.readValue(messagesIs, LocalizedData.class);
 
                 String dest = "lightspeed_arena_" + locale.getLanguage() + ".pdf";
                 PdfGenerator pdfGenerator = new PdfGenerator(gameData, messages, locale.getLanguage());
@@ -48,4 +54,3 @@ public class Main {
         }
     }
 }
-

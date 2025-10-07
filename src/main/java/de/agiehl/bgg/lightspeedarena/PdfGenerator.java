@@ -1,7 +1,6 @@
 package de.agiehl.bgg.lightspeedarena;
 
 import com.itextpdf.io.font.constants.StandardFonts;
-import com.itextpdf.io.source.ByteArrayOutputStream;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.events.Event;
@@ -37,8 +36,8 @@ import java.io.InputStream;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.Map;
+import java.util.Optional;
 
 public class PdfGenerator {
 
@@ -55,10 +54,10 @@ public class PdfGenerator {
     private final boolean showSectionTitles = false;
 
     private final GameData gameData;
-    private final ResourceBundle messages;
+    private final LocalizedData messages;
     private final String language;
 
-    public PdfGenerator(GameData gameData, ResourceBundle messages, String language) {
+    public PdfGenerator(GameData gameData, LocalizedData messages, String language) {
         this.gameData = gameData;
         this.messages = messages;
         this.language = language;
@@ -78,9 +77,9 @@ public class PdfGenerator {
         // Add Comets
         if (gameData.getComets() != null && !gameData.getComets().isEmpty()) {
             if (showSectionTitles) {
-                addSectionTitle(document, messages.getString("title.comets"));
+                addSectionTitle(document, messages.getTitle().getComets());
             }
-            addItemsToDocument(document, gameData.getComets());
+            addItemsToDocument(document, gameData.getComets(), messages.getComets());
         }
 
         // Add Factions
@@ -90,9 +89,9 @@ public class PdfGenerator {
                 document.add(new AreaBreak(AreaBreakType.NEXT_PAGE));
             }
             if (showSectionTitles) {
-                addSectionTitle(document, messages.getString("title.factions"));
+                addSectionTitle(document, messages.getTitle().getFactions());
             }
-            addItemsToDocument(document, gameData.getFactions());
+            addItemsToDocument(document, gameData.getFactions(), messages.getFactions());
         }
 
         // Now that all pages are added, fill in the total page number placeholders
@@ -112,7 +111,7 @@ public class PdfGenerator {
         document.add(titleParagraph);
     }
 
-    private void addItemsToDocument(Document document, List<? extends GameItem> items) throws IOException {
+    private void addItemsToDocument(Document document, List<? extends GameItem> items, List<LocalizedItem> localizedItems) throws IOException {
         for (int i = 0; i < items.size(); i += ITEMS_PER_PAGE) {
             // Get the sublist for the current page
             List<? extends GameItem> pageItems = items.subList(i, Math.min(i + ITEMS_PER_PAGE, items.size()));
@@ -121,7 +120,7 @@ public class PdfGenerator {
             table.setMarginBottom(20);
 
             for (GameItem item : pageItems) {
-                Cell cell = createItemCell(item);
+                Cell cell = createItemCell(item, localizedItems);
                 table.addCell(cell);
             }
 
@@ -141,8 +140,20 @@ public class PdfGenerator {
         }
     }
 
-    private Cell createItemCell(GameItem item) throws IOException {
+    private Cell createItemCell(GameItem item, List<LocalizedItem> localizedItems) throws IOException {
         Cell cell = new Cell().setBorder(null).setPadding(CELL_PADDING);
+
+        // Find the localized text for this item
+        Optional<LocalizedItem> localizedItemOpt = localizedItems.stream()
+                .filter(li -> li.getId().equalsIgnoreCase(item.getId()))
+                .findFirst();
+
+        if (localizedItemOpt.isEmpty()) {
+            logger.warn("No localized text found for item ID: {}", item.getId());
+            cell.add(new Paragraph("Missing text for " + item.getId()));
+            return cell;
+        }
+        LocalizedItem localizedItem = localizedItemOpt.get();
 
         // --- Image Container ---
         Div imageContainer = new Div()
@@ -169,7 +180,7 @@ public class PdfGenerator {
         PdfFont normalFont = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         PdfFont expansionFont = PdfFontFactory.createFont(StandardFonts.HELVETICA_OBLIQUE);
 
-        Paragraph name = new Paragraph(messages.getString(item.getNameKey()))
+        Paragraph name = new Paragraph(localizedItem.getName())
                 .setFont(boldFont)
                 .setFontSize(11)
                 .setTextAlignment(TextAlignment.CENTER)
@@ -179,23 +190,27 @@ public class PdfGenerator {
         cell.add(name);
 
         if (item.getExpansionKey() != null && !item.getExpansionKey().isBlank()) {
-            Text star = new Text("★ ")
-                    .setFontColor(ColorConstants.BLUE);
-            Text expansionText = new Text(messages.getString(item.getExpansionKey()))
-                    .setFont(expansionFont)
-                    .setFontSize(9)
-                    .setFontColor(ColorConstants.BLUE);
-            Paragraph expansion = new Paragraph()
-                    .add(star)
-                    .add(expansionText)
-                    .setTextAlignment(TextAlignment.CENTER)
-                    .setMarginBottom(5)
-                    .setMultipliedLeading(1.0f);
-            cell.add(expansion);
+            String expansionKey = item.getExpansionKey().substring(item.getExpansionKey().lastIndexOf('.') + 1);
+            String expansionName = messages.getExpansions().get(expansionKey);
+            if (expansionName != null) {
+                Text star = new Text("★ ")
+                        .setFontColor(ColorConstants.BLUE);
+                Text expansionText = new Text(expansionName)
+                        .setFont(expansionFont)
+                        .setFontSize(9)
+                        .setFontColor(ColorConstants.BLUE);
+                Paragraph expansion = new Paragraph()
+                        .add(star)
+                        .add(expansionText)
+                        .setTextAlignment(TextAlignment.CENTER)
+                        .setMarginBottom(5)
+                        .setMultipliedLeading(1.0f);
+                cell.add(expansion);
+            }
         }
 
-        int fontsize = Integer.parseInt(messages.getString("fontsize"));
-        Paragraph description = new Paragraph(messages.getString(item.getDescriptionKey()))
+        int fontsize = Integer.parseInt(messages.getFontsize());
+        Paragraph description = new Paragraph(localizedItem.getDescription())
                 .setFont(normalFont)
                 .setFontSize(fontsize)
                 .setTextAlignment(TextAlignment.CENTER)
@@ -206,10 +221,10 @@ public class PdfGenerator {
     }
 
     private static class HeaderFooterHandler implements IEventHandler {
-        private final ResourceBundle messages;
+        private final LocalizedData messages;
         private final Map<Integer, PdfFormXObject> totalPagePlaceholders = new HashMap<>();
 
-        public HeaderFooterHandler(ResourceBundle messages) {
+        public HeaderFooterHandler(LocalizedData messages) {
             this.messages = messages;
         }
 
@@ -236,19 +251,19 @@ public class PdfGenerator {
                 // Header
                 pdfCanvas.beginText()
                         .setFontAndSize(font, 12)
-                        .moveText(xCenter - (messages.getString("header.title").length() * 3), yHeader) // Simple centering
-                        .showText(messages.getString("header.title"))
+                        .moveText(xCenter - (messages.getHeader().getTitle().length() * 3), yHeader) // Simple centering
+                        .showText(messages.getHeader().getTitle())
                         .endText();
 
                 // Footer
                 pdfCanvas.beginText()
                         .setFontAndSize(font, 8)
                         .moveText(pageSize.getLeft() + 20, yFooter)
-                        .showText(messages.getString("footer.copyright"))
+                        .showText(messages.getFooter().getCopyright())
                         .endText();
 
                 // Page X of Y
-                String pageOfText = MessageFormat.format(messages.getString("footer.page"), pageNum, " "); // "Page X of "
+                String pageOfText = MessageFormat.format(messages.getFooter().getPage(), pageNum, " "); // "Page X of "
                 pageOfText = pageOfText.substring(0, pageOfText.length() - 1); // Remove trailing space if any
                 float pageTextWidth = font.getWidth(pageOfText, 8);
                 float totalPlaceholderWidth = font.getWidth("000", 8); // Estimate width for total pages

@@ -4,13 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GameItem {
-    private String image;
-    private String nameKey;
-    private String subtitleKey;
-    private String expansionKey;
-    private String descriptionKey;
 
-    // Getters and Setters
+    private String image;
+    private String id;
+    private String expansionKey;
+
     public String getImage() {
         return image;
     }
@@ -19,20 +17,12 @@ public class GameItem {
         this.image = image;
     }
 
-    public String getNameKey() {
-        return nameKey;
+    public String getId() {
+        return id;
     }
 
-    public void setNameKey(String nameKey) {
-        this.nameKey = nameKey;
-    }
-
-    public String getSubtitleKey() {
-        return subtitleKey;
-    }
-
-    public void setSubtitleKey(String subtitleKey) {
-        this.subtitleKey = subtitleKey;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getExpansionKey() {
@@ -42,13 +32,4 @@ public class GameItem {
     public void setExpansionKey(String expansionKey) {
         this.expansionKey = expansionKey;
     }
-
-    public String getDescriptionKey() {
-        return descriptionKey;
-    }
-
-    public void setDescriptionKey(String descriptionKey) {
-        this.descriptionKey = descriptionKey;
-    }
 }
-

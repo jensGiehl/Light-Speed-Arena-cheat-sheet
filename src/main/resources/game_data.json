@@ -2,151 +2,109 @@
   "comets": [
     {
       "image": "/images/comets/base_astrofuelll.png",
-      "nameKey": "comet.name.astrofuel",
-      "subtitleKey": "comet.subtitle.astrofuel",
-      "descriptionKey": "comet.description.astrofuel",
+      "id": "astrofuel",
       "expansionKey": null
     },
     {
       "image": "/images/comets/base_destinyammo.png",
-      "nameKey": "comet.name.destinyammo",
-      "subtitleKey": "comet.subtitle.destinyammo",
-      "descriptionKey": "comet.description.destinyammo",
+      "id": "destinyammo",
       "expansionKey": null
     },
     {
       "image": "/images/comets/base_driftcola.png",
-      "nameKey": "comet.name.driftcola",
-      "subtitleKey": "comet.subtitle.driftcola",
-      "descriptionKey": "comet.description.driftcola",
+      "id": "driftcola",
       "expansionKey": null
     },
     {
       "image": "/images/comets/base_novasnipe.png",
-      "nameKey": "comet.name.novasnipe",
-      "subtitleKey": "comet.subtitle.novasnipe",
-      "descriptionKey": "comet.description.novasnipe",
+      "id": "novasnipe",
       "expansionKey": null
     },
     {
       "image": "/images/comets/base_nugget.png",
-      "nameKey": "comet.name.nugget",
-      "subtitleKey": "comet.subtitle.nugget",
-      "descriptionKey": "comet.description.nugget",
+      "id": "nugget",
       "expansionKey": null
     },
     {
       "image": "/images/comets/base_photonbright.png",
-      "nameKey": "comet.name.photonbright",
-      "subtitleKey": "comet.subtitle.photonbright",
-      "descriptionKey": "comet.description.photonbright",
+      "id": "photonbright",
       "expansionKey": null
     },
     {
       "image": "/images/comets/BlackHole_live4d.png",
-      "nameKey": "comet.name.live4d",
-      "subtitleKey": "comet.subtitle.live4d",
-      "descriptionKey": "comet.description.live4d",
+      "id": "live4d",
       "expansionKey": "expansion.blackhole"
     },
     {
       "image": "/images/comets/BlackHole_saferspace.png",
-      "nameKey": "comet.name.saferspace",
-      "subtitleKey": "comet.subtitle.saferspace",
-      "descriptionKey": "comet.description.saferspace",
+      "id": "saferspace",
       "expansionKey": "expansion.blackhole"
     },
     {
       "image": "/images/comets/Glyphon_rayrebuff.png",
-      "nameKey": "comet.name.rayrebuff",
-      "subtitleKey": "comet.subtitle.rayrebuff",
-      "descriptionKey": "comet.description.rayrebuff",
+      "id": "rayrebuff",
       "expansionKey": "expansion.glyphon"
     },
     {
       "image": "/images/comets/Glyphon_voidjugglers.png",
-      "nameKey": "comet.name.voidjugglers",
-      "subtitleKey": "comet.subtitle.voidjugglers",
-      "descriptionKey": "comet.description.voidjugglers",
+      "id": "voidjugglers",
       "expansionKey": "expansion.glyphon"
     },
     {
       "image": "/images/comets/kickstarter_community.png",
-      "nameKey": "comet.name.community",
-      "subtitleKey": "comet.subtitle.community",
-      "descriptionKey": "comet.description.community",
+      "id": "community",
       "expansionKey": "expansion.kickstarter"
     },
     {
       "image": "/images/comets/kickstarter_sorry.png",
-      "nameKey": "comet.name.sorry",
-      "subtitleKey": "comet.subtitle.sorry",
-      "descriptionKey": "comet.description.sorry",
+      "id": "sorry",
       "expansionKey": "expansion.kickstarter"
     },
     {
       "image": "/images/comets/kickstarter_xmas.png",
-      "nameKey": "comet.name.xmas",
-      "subtitleKey": "comet.subtitle.xmas",
-      "descriptionKey": "comet.description.xmas",
+      "id": "xmas",
       "expansionKey": "expansion.kickstarter"
     },
     {
       "image": "/images/comets/tablescope.png",
-      "nameKey": "comet.name.tablescope",
-      "subtitleKey": "comet.subtitle.tablescope",
-      "descriptionKey": "comet.description.tablescope",
+      "id": "tablescope",
       "expansionKey": "expansion.sponsored.asteroids"
     },
     {
       "image": "/images/comets/tantrum.png",
-      "nameKey": "comet.name.tantrum",
-      "subtitleKey": "comet.subtitle.tantrum",
-      "descriptionKey": "comet.description.tantrum",
+      "id": "tantrum",
       "expansionKey": "expansion.sponsored.asteroids"
     }
   ],
   "factions": [
     {
       "image": "/images/factions/base_amboom.png",
-      "nameKey": "faction.name.amboom",
-      "subtitleKey": "faction.subtitle.amboom",
-      "descriptionKey": "faction.description.amboom",
+      "id": "amboom",
       "expansionKey": null
     },
     {
       "image": "/images/factions/base_argonauts.png",
-      "nameKey": "faction.name.argonauts",
-      "subtitleKey": "faction.subtitle.argonauts",
-      "descriptionKey": "faction.description.argonauts",
+      "id": "argonauts",
       "expansionKey": null
     },
     {
       "image": "/images/factions/base_retroblast.png",
-      "nameKey": "faction.name.retroblast",
-      "subtitleKey": "faction.subtitle.retroblast",
-      "descriptionKey": "faction.description.retroblast",
+      "id": "retroblast",
       "expansionKey": null
     },
     {
       "image": "/images/factions/base_solspear.png",
-      "nameKey": "faction.name.solspear",
-      "subtitleKey": "faction.subtitle.solspear",
-      "descriptionKey": "faction.description.solspear",
+      "id": "solspear",
       "expansionKey": null
     },
     {
       "image": "/images/factions/BlackHole.png",
-      "nameKey": "faction.name.blackhole",
-      "subtitleKey": "faction.subtitle.blackhole",
-      "descriptionKey": "faction.description.blackhole",
+      "id": "blackhole",
       "expansionKey": "expansion.blackhole"
     },
     {
       "image": "/images/factions/Glyphon.png",
-      "nameKey": "faction.name.glyphon",
-      "subtitleKey": "faction.subtitle.glyphon",
-      "descriptionKey": "faction.description.glyphon",
+      "id": "glyphon",
       "expansionKey": "expansion.glyphon"
     }
   ]

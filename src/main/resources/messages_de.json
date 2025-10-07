@@ -1,0 +1,151 @@
+{
+  "header": {
+    "title": "Lightning Speed: Arena"
+  },
+  "footer": {
+    "copyright": "Bilder & Text (c) TABLESCOPE GmbH. Zusammengefasst von JensG.",
+    "page": "Seite {0} von {1}"
+  },
+  "fontsize": "9",
+  "title": {
+    "comets": "Kometen",
+    "factions": "Fraktionen"
+  },
+  "expansions": {
+    "base": "Grundspiel",
+    "blackhole": "BlackHole Erweiterung",
+    "glyphon": "Glyphon Erweiterung",
+    "kickstarter": "Kickstarter Sponsored Asteroids",
+    "sponsored.asteroids": "Promo Sponsored Asteroids"
+  },
+  "comets": [
+    {
+      "id": "astrofuel",
+      "name": "ASTROFUELLL",
+      "subtitle": "Einmal voLLLtanken bitte!",
+      "description": "Trifft ein Laser diesen Asteroiden, erhöht sich die Stärke aller anderen Laser dieses Raumschiffs um +1."
+    },
+    {
+      "id": "destinyammo",
+      "name": "DESTINY AMMO",
+      "subtitle": "Feuerkraft auf Abruf",
+      "description": "Wird dieser Asteroid getroffen, feuert er mit seiner Bordkanone auf ein zufälliges gegnerisches Schiff in Sichtweite mit der Stärke des eintreffenden Lasers. Dieser Schuss ist neutral: Der verursachte Schaden zählt nicht zum Schadenskonto einer Fraktion."
+    },
+    {
+      "id": "driftcola",
+      "name": "DRIFT COLA",
+      "subtitle": "Die richtige DOSE Risiko",
+      "description": "Jeder Laserstrahl, der einen Treffer landet oder Mineralien abbaut und dabei eine befreundete Einheit knapp verfehlt (das Plättchen durchquert, aber die abgebildete Einheit nicht trifft), bringt dem Spieler 2 Bonuspunkte, Haarscharf!"
+    },
+    {
+      "id": "novasnipe",
+      "name": "NOVA SNIPE",
+      "subtitle": "Wir liefern über jede Distanz",
+      "description": "Jeder Laserstrahl, der einen Treffer landet oder Mineralien abbaut und dabei eine Entfernung von mehr als 28 cm (4 Asteroiden Abstand) überbrückt, bringt dem Spieler 3 zusätzliche Punkte für seine Fernkampfkünste."
+    },
+    {
+      "id": "nugget",
+      "name": "DER NUGGET",
+      "subtitle": "Halb so groß, doppelt so wertvoll!",
+      "description": "Schwierig zu treffen, dafür bringt jeder Treffer doppelt so viele Mineralien-Einheiten."
+    },
+    {
+      "id": "photonbright",
+      "name": "PHOTONBRIGHT",
+      "subtitle": "Überdauern. Überstrahlen.",
+      "description": "Nach der Schlacht erhalten die fünf überlebenden Raumschiffe, die am nächsten an diesem Asteroiden dran liegen, jeweils 3 Punkte. Sie strahlen im Rampenlicht!"
+    },
+    {
+      "id": "live4d",
+      "name": "LIVE 4D",
+      "subtitle": "Seht mich an!",
+      "description": "Schilde sind Werbebildschirme. Jedes Mal, wenn ein Schild aktiviert wird, erhält der Besitzer des geschützten Raumschiffs 1 Punkt."
+    },
+    {
+      "id": "saferspace",
+      "name": "SAFERSPACE",
+      "subtitle": "Sichere Fracht, sichere Punkte!",
+      "description": "Nach der Schlacht erhalten der Spieler oder die Spieler mit den meisten gesammelten Mineralien Bonuspunkte in Höhe der Hälfte ihrer gesammelten Mineralien, aufgerundet (+50% Punkte für Mineralien)."
+    },
+    {
+      "id": "rayrebuff",
+      "name": "RAY REBUFF",
+      "subtitle": "Boing",
+      "description": "Strahlen durchdringen weiterhin Schilde und bewirken verminderten Schaden. Zudem reflektieren Schilde jetzt einen Anteil des Lasers mit voller Stärke entlang ihrer Tangente. Bitte was?! Lass die App das übernehmen ;) Der Schaden des reflektierten Strahls zählt nicht zum Schadenskonto einer Fraktion."
+    },
+    {
+      "id": "voidjugglers",
+      "name": "VOID JUGGLERS",
+      "subtitle": "Diese Show steht Kopf",
+      "description": "Raumschiffe schießen in umgekehrter Initiativreihenfolge. Was für ein WOHS!"
+    },
+    {
+      "id": "community",
+      "name": "COMMUNITY ASTEROID",
+      "subtitle": "Woooosh!",
+      "description": "Dieser Asteroid kann nicht getroffen werden, und Laserstrahlen fliegen hindurch. Dabei erhalten sie +1 Schaden dank des tosenden Publikums."
+    },
+    {
+      "id": "sorry",
+      "name": "SORRY! I`M LATE",
+      "subtitle": "Bin ich noch rechtzeitig?",
+      "description": "Raumschiffe erscheinen erst dann im Spielfeld, wenn sie feuern sollen. Bis zu ihrer Initiative gelten sie als nicht im Spiel."
+    },
+    {
+      "id": "xmas",
+      "name": "SPACE XMAS",
+      "subtitle": "An, aus, an...",
+      "description": "Alle Asteroiden blinken. Sie sind nur während ungerader Initiativen im Spiel."
+    },
+    {
+      "id": "tablescope",
+      "name": "TABLESCOPE",
+      "subtitle": "Dein Raum, dein Spiel.",
+      "description": "Raumschiffe, die sich in der Sichtlinie zu Tablescopes Auge befinden und mindestens drei Asteroiden entfernt sind, erhalten +1 Schaden für all ihre Laser. Andere Raumschiffe und Asteroiden können die Sichtlinie unterbrechen."
+    },
+    {
+      "id": "tantrum",
+      "name": "TANTRUM HOUSE",
+      "subtitle": "Flipping fun",
+      "description": "Wird er getroffen, schleudert er einen Tisch von der Größe eines Asteroiden in Schussrichtung des Lasers. Alle Raumschiffe, auf denen der Tisch landet, erleiden Schaden (SDN). Die Distanz und die Höhe des SDN hängen vom Lasertyp ab. Grün: 1-2 Distanz, 1 SDN; Gelb: 3-4 Distanz, 2 SDN; Rot: 5-6 Distanz, 3 SDN. Distanz in Asteroiden gemessen."
+    }
+  ],
+  "factions": [
+    {
+      "id": "amboom",
+      "name": "AMBOOM",
+      "subtitle": "Tödlich",
+      "description": "Wenn ein Amboom-Laser ein Schiff oder eine Basis trifft, die in einer vorherigen Initiative bereits Schaden erlitten hat, wird das Ziel sofort zerstört, und der Amboom-Spieler erhält die Punkte für die Zerstörung."
+    },
+    {
+      "id": "argonauts",
+      "name": "AGRONAUTS",
+      "subtitle": "Robust",
+      "description": "Die Schilde der Agronauts reduzieren den Schaden auf 0, anstatt ihn nur um 1 zu verringern."
+    },
+    {
+      "id": "retroblast",
+      "name": "RETROBLAST",
+      "subtitle": "Vergeltend",
+      "description": "Wenn ein Retroblast-Raumschiff in einer vorherigen Initiative beschädigt wurde, wird die Stärke all seiner Laser verdoppelt."
+    },
+    {
+      "id": "solspear",
+      "name": "SOLSPEAR",
+      "subtitle": "Durchdringend",
+      "description": "Die gelben Solspear-Laser (Stärke 2) durchdringen das erste Ziel."
+    },
+    {
+      "id": "blackhole",
+      "name": "BLACKHOLE",
+      "subtitle": "Entern!",
+      "description": "Wenn ein BlackHole-Raumschiff schießt, erhalten alle benachbarten gegnerischen Einheiten, die noch nicht von einem seiner Laserstrahlen getroffen wurden, 1 Schaden. Er wird auf das BlackHole-Schadenskonto angerechnet und zählt als gelandeter Treffer. Als benachbart zählt hierbei jede Einheit, deren Abstand vom BlackHole-Raumschiff höchstens 1 Asteroid (7 cm) beträgt."
+    },
+    {
+      "id": "glyphon",
+      "name": "GLYPHON",
+      "subtitle": "Vakuumstrahlen.",
+      "description": "Wenn ein Glyphon-Laser ein gegnerisches Plättchen durchquert, ohne die Einheit zu treffen, erhält die gegnerische Einheit trotzdem Schaden in Höhe der Stärke des Strahls. Er wird auf das Glyphon-Schadenskonto angerechnet, zählt jedoch nicht als gelandeter Treffer."
+    }
+  ]
+}

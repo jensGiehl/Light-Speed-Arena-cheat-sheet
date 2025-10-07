@@ -1,0 +1,150 @@
+{
+  "header": {
+    "title": "Lightning Speed: Arena"
+  },
+  "footer": {
+    "copyright": "Images & Text (c) Tablescope GmbH. Summarized by JensG.",
+    "page": "Page {0} of {1}"
+  },
+  "fontsize": "10",
+  "title": {
+    "comets": "Comets",
+    "factions": "Factions"
+  },
+  "expansions": {
+    "blackhole": "BlackHole Expansion",
+    "glyphon": "Glyphon Expansion",
+    "kickstarter": "Kickstarter Sponsored Asteroids",
+    "sponsored.asteroids": "Promo Sponsored Asteroids"
+  },
+  "comets": [
+    {
+      "id": "astrofuel",
+      "name": "ASTROFUELLL",
+      "subtitle": "Leaded, please!",
+      "description": "If a laser hits this asteroid, all other lasers from the same spaceship obtain +1 damage thanks to the fill-up."
+    },
+    {
+      "id": "destinyammo",
+      "name": "DESTINY AMMO",
+      "subtitle": "Firepower on demand",
+      "description": "When this asteroid is hit, it fires at a random enemy ship with its onboard cannon, matching the power of the incoming laser. This shot is neutral and does not count towards any faction's damage tally."
+    },
+    {
+      "id": "driftcola",
+      "name": "DRIFT COLA",
+      "subtitle": "You know you CAN!",
+      "description": "Any laser that narrowly avoids a friendly spaceship (traversing the tile but not the ship illustration) on its way to delivering a hit or mining minerals, grants the faction 2 bonus points for the close shave."
+    },
+    {
+      "id": "novasnipe",
+      "name": "NOVA SNIPE",
+      "subtitle": "We deliver at any distance",
+      "description": "Any laser delivering a hit or mining minerals from a range exceeding 28 cm (4 asteroids of distance) grants the faction an additional 3 points for their long-range prowess."
+    },
+    {
+      "id": "nugget",
+      "name": "THE NUGGET",
+      "subtitle": "Half the size, double the price!",
+      "description": "More difficult to hit, it awards double the minerals."
+    },
+    {
+      "id": "photonbright",
+      "name": "PHOTONBRIGHT",
+      "subtitle": "Outlast. Outshine",
+      "description": "Upon battle resolution, the five closest surviving spaceships score 3 points each for being under the spotlight."
+    },
+    {
+      "id": "live4d",
+      "name": "LIVE 4D",
+      "subtitle": "Look at me!",
+      "description": "Shields are advertising screens. Every time a shield activates, the owner is rewarded with 1 point."
+    },
+    {
+      "id": "saferspace",
+      "name": "SAFERSPACE",
+      "subtitle": "Your effort, your reward, safe!",
+      "description": "Upon battle resolution, the player or players with the most minerals gain bonus points equal to half of the total mineral units they collected, rounded up (+50% points from minerals)."
+    },
+    {
+      "id": "rayrebuff",
+      "name": "RAY REBUFF",
+      "subtitle": "Boing",
+      "description": "After reducing incoming damage as usual, shields reflect the laser at full strength on their tangent. Reflected damage is neutral and does not count towards any faction's damage tally."
+    },
+    {
+      "id": "voidjugglers",
+      "name": "VOID JUGGLERS",
+      "subtitle": "An upside-down show",
+      "description": "Spaceships shoot in reverse initiative order. What a wohs!"
+    },
+    {
+      "id": "community",
+      "name": "COMMUNITY ASTEROID",
+      "subtitle": "Woooosh!",
+      "description": "This asteroid can't be hit, and lasers pass right through it, gaining +1 damage thanks to the roaring crowd's energy boost."
+    },
+    {
+      "id": "sorry",
+      "name": "SORRY! I'M LATE",
+      "subtitle": "Am I still on time?",
+      "description": "All spaceships arrive onto the battlefield only when it's time for them to shoot. Until their initiative, they are not in play."
+    },
+    {
+      "id": "xmas",
+      "name": "SPACE XMAS",
+      "subtitle": "On, off, on...",
+      "description": "All asteroids blink in and out. They are in play only during odd-numbered initiatives."
+    },
+    {
+      "id": "tablescope",
+      "name": "TABLESCOPE",
+      "subtitle": "Play your space",
+      "description": "Spaceships in sight of Tablescope's eye and positioned at least three asteroids away gain +1 damage to all their lasers. Other spaceships and asteroids can break the line of sight."
+    },
+    {
+      "id": "tantrum",
+      "name": "TANTRUM HOUSE",
+      "subtitle": "Flipping fun",
+      "description": "When hit, it flips an asteroid-sized table in the laser's firing direction, damaging all spaceships it lands on. The flip distance and damage are determined by the laser type. Green: 1-2 asteroids range, 1 dmg; Yellow: 3-4 asteroids range, 2 dmg; Red: 5-6 asteroids range, 3 dmg."
+    }
+  ],
+  "factions": [
+    {
+      "id": "amboom",
+      "name": "AMBOOM",
+      "subtitle": "Lethal",
+      "description": "If an Amboom laser damages a ship or base that was already damaged in a previous initiative, the target is instantly destroyed, and the Ambooms claim the points from the destruction."
+    },
+    {
+      "id": "argonauts",
+      "name": "AGRONAUTS",
+      "subtitle": "Sturdy",
+      "description": "Agronauts' shields reduce damage to 0 instead of only decreasing it by 1."
+    },
+    {
+      "id": "retroblast",
+      "name": "RETROBLAST",
+      "subtitle": "Retaliating",
+      "description": "If a Retroblast spaceship was damaged in a previous initiative, the power of all its laser beams is doubled."
+    },
+    {
+      "id": "solspear",
+      "name": "SOLSPEAR",
+      "subtitle": "Penetrating",
+      "description": "Solspear yellow lasers (2-damage ones) pierce through the first target."
+    },
+    {
+      "id": "blackhole",
+      "name": "BLACKHOLE",
+      "subtitle": "Boarding!",
+      "description": "When a BlackHole spaceship shoots, all enemy ships within an asteroid of distance and not already hit by one of its lasers get 1 damage. It counts towards the BlackHole's damage tally and counts as a delivered hit."
+    },
+    {
+      "id": "glyphon",
+      "name": "GLYPHON",
+      "subtitle": "Voidwave.",
+      "description": "If a Glyphon laser traverses an enemy tile without hitting the spaceship, the enemy spaceship still gets as much damage as the power of the beam. This counts towards the Glyphon's damage tally but does not count as a delivered hit."
+    }
+  ]
+}
