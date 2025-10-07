@@ -1,4 +1,4 @@
-package de.agiehl.bgg.lightspeedarena;
+package de.agiehl.bgg.lightspeedarena.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

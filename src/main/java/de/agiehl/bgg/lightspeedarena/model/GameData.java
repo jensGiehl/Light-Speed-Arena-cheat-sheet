@@ -1,4 +1,4 @@
-package de.agiehl.bgg.lightspeedarena;
+package de.agiehl.bgg.lightspeedarena.model;
 
 import java.util.List;
 
@@ -6,7 +6,6 @@ public class GameData {
     private List<Comet> comets;
     private List<Faction> factions;
 
-    // Getters and Setters
     public List<Comet> getComets() {
         return comets;
     }

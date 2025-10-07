@@ -1,6 +1,9 @@
 package de.agiehl.bgg.lightspeedarena;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.agiehl.bgg.lightspeedarena.model.GameData;
+import de.agiehl.bgg.lightspeedarena.model.LocalizedData;
+import de.agiehl.bgg.lightspeedarena.pdf.PdfGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,8 +17,6 @@ public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
-        // Defines which languages should be generated.
-        // Add a new Locale here to support a new language.
         List<Locale> supportedLocales = List.of(
                 Locale.GERMAN,
                 Locale.ENGLISH,
@@ -23,27 +24,25 @@ public class Main {
         );
 
         try {
-            // Load the central game data from JSON
             ObjectMapper mapper = new ObjectMapper();
-            InputStream is = Main.class.getResourceAsStream("/game_data.json");
-            if (is == null) {
+            InputStream gameDataStream = Main.class.getResourceAsStream("/game_data.json");
+            if (gameDataStream == null) {
                 logger.error("game_data.json not found in resources!");
                 return;
             }
-            GameData gameData = mapper.readValue(is, GameData.class);
+            GameData gameData = mapper.readValue(gameDataStream, GameData.class);
             logger.info("Successfully loaded game data from JSON.");
 
-            // Generate a PDF for each supported language
             for (Locale locale : supportedLocales) {
                 logger.info("Generating PDF for language: {}", locale.getLanguage());
 
                 String messagesFile = "/messages_" + locale.getLanguage() + ".json";
-                InputStream messagesIs = Main.class.getResourceAsStream(messagesFile);
-                if (messagesIs == null) {
+                InputStream messagesStream = Main.class.getResourceAsStream(messagesFile);
+                if (messagesStream == null) {
                     logger.error("{} not found in resources!", messagesFile);
-                    continue; // Skip to next language
+                    continue;
                 }
-                LocalizedData messages = mapper.readValue(messagesIs, LocalizedData.class);
+                LocalizedData messages = mapper.readValue(messagesStream, LocalizedData.class);
 
                 String dest = "lightspeed_arena_" + locale.getLanguage() + ".pdf";
                 PdfGenerator pdfGenerator = new PdfGenerator(gameData, messages, locale.getLanguage());

@@ -1,4 +1,4 @@
-package de.agiehl.bgg.lightspeedarena;
+package de.agiehl.bgg.lightspeedarena.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
@@ -13,8 +13,6 @@ public class LocalizedData {
     private Map<String, String> expansions;
     private List<LocalizedItem> comets;
     private List<LocalizedItem> factions;
-
-    // Getters and setters
 
     public HeaderData getHeader() {
         return header;
