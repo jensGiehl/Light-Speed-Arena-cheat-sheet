@@ -1,8 +1,10 @@
-name: Build and Release PDF
+name: Build, Test and Release PDF
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 permissions:
   contents: write
@@ -20,13 +22,29 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    - name: Build with Maven
+    - name: Build and Test with Maven
       run: mvn -B package --file pom.xml
 
     - name: Run application
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       run: java -jar target/pdf-generator-*.jar
 
+    - name: Create Output Directory
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: mkdir -p output
+
+    - name: Move PDF files
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: mv *.pdf output/
+
+    - name: Create Tag
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      id: create_tag
+      run: echo "tag_name=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
+
     - name: Release PDF files
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       uses: softprops/action-gh-release@v2
       with:
-        files: "*.pdf"
+        files: "output/*.pdf"
+        tag_name: ${{ steps.create_tag.outputs.tag_name }}
