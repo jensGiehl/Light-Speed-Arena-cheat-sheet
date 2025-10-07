@@ -1,0 +1,151 @@
+{
+  "header": {
+    "title": "Lightning Speed: Arena"
+  },
+  "footer": {
+    "copyright": "Immagini e testo (c) Tablescope GmbH. Riassunto da JensG.",
+    "page": "Pagina {0} di {1}"
+  },
+  "fontsize": "10",
+  "title": {
+    "comets": "Comete",
+    "factions": "Fazioni"
+  },
+  "expansions": {
+    "base": "Gioco Base",
+    "blackhole": "Espansione BlackHole",
+    "glyphon": "Espansione Glyphon",
+    "kickstarter": "Asteroidi Sponsorizzati Kickstarter",
+    "sponsored.asteroids": "Asteroidi Sponsorizzati Promo"
+  },
+  "comets": [
+    {
+      "id": "astrofuel",
+      "name": "ASTROFUELLL",
+      "subtitle": "Con piombo, grazie!",
+      "description": "Se un laser colpisce questo asteroide, tutti gli altri laser della stessa astronave ottengono +1 danno grazie al rifornimento."
+    },
+    {
+      "id": "destinyammo",
+      "name": "DESTINY AMMO",
+      "subtitle": "Cannonate on demand.",
+      "description": "Quando questo asteroide viene colpito, il cannone di bordo spara a una nave nemica a caso, con la stessa potenza di fuoco del laser che lo ha colpito. Questo colpo è neutrale e non conta nel conteggio dei danni di nessuna fazione."
+    },
+    {
+      "id": "driftcola",
+      "name": "DRIFT COLA",
+      "subtitle": "Per un soffio… di adrenalinapura!",
+      "description": "Ogni laser che sfiora un’astronave amica (attraversando la tessera senza colpire l’illustrazione dell’astronave) mentre è in rotta per colpire un bersaglio nemico o estrarre minerali, garantisce alla fazione 2 punti bonus."
+    },
+    {
+      "id": "novasnipe",
+      "name": "NOVA SNIPE",
+      "subtitle": "Consegnamo a qualsiasi distanza.",
+      "description": "Ogni laser che colpisce un bersaglio o estrae minerali da una distanza superiore a 28 cm (4 asteroidi di distanza) garantisce alla fazione 3 punti aggiuntivi per la lunga gittata."
+    },
+    {
+      "id": "nugget",
+      "name": "THE NUGGET",
+      "subtitle": "Piccola di statura, grande in fattura!",
+      "description": "Più difficile da colpire, assegna minerali doppi."
+    },
+    {
+      "id": "photonbright",
+      "name": "PHOTONBRIGHT",
+      "subtitle": "Non brillare: splendi!",
+      "description": "Alla fine della battaglia, le cinque astronavi sopravvissute più vicine guadagnano 3 punti ciascuna per essere sotto i riflettori."
+    },
+    {
+      "id": "live4d",
+      "name": "LIVE 4D",
+      "subtitle": "Guardami!",
+      "description": "Gli scudi sono schermi pubblicitari. Ogni volta che uno scudo si attiva, il proprietario viene ricompensato con 1 punto."
+    },
+    {
+      "id": "saferspace",
+      "name": "SAFERSPACE",
+      "subtitle": "Il tuo sforzo, la tua ricompensa, al sicuro!",
+      "description": "Alla risoluzione della battaglia, il giocatore o i giocatori con il maggior numero di minerali ottengono punti bonus pari alla metà delle unità minerali totali raccolte, arrotondate per eccesso (+50% di punti dai minerali)."
+    },
+    {
+      "id": "rayrebuff",
+      "name": "RAY REBUFF",
+      "subtitle": "Boing",
+      "description": "Dopo aver ridotto i danni in arrivo come di consueto, gli scudi riflettono il laser a piena potenza sulla loro tangente. Il danno riflesso è neutrale e non conta per il conteggio dei danni di nessuna fazione."
+    },
+    {
+      "id": "voidjugglers",
+      "name": "VOID JUGGLERS",
+      "subtitle": "Uno spettacolo sottosopra",
+      "description": "Le astronavi sparano in ordine di iniziativa inverso. Che wohs!"
+    },
+    {
+      "id": "community",
+      "name": "COMMUNITY ASTEROID",
+      "subtitle": "Woooosh!",
+      "description": "Questo asteroide non può essere colpito e i laser lo attraversano, guadagnando +1 danno grazie alla spinta energetica della folla ruggente."
+    },
+    {
+      "id": "sorry",
+      "name": "SORRY! I'M LATE",
+      "subtitle": "Sono ancora in tempo?",
+      "description": "Tutte le astronavi arrivano sul campo di battaglia solo quando è il loro turno di sparare. Fino alla loro iniziativa, non sono in gioco."
+    },
+    {
+      "id": "xmas",
+      "name": "SPACE XMAS",
+      "subtitle": "Acceso, spento, acceso...",
+      "description": "Tutti gli asteroidi lampeggiano. Sono in gioco solo durante le iniziative dispari."
+    },
+    {
+      "id": "tablescope",
+      "name": "TABLESCOPE",
+      "subtitle": "Gioca il tuo spazio",
+      "description": "Le astronavi in vista dell'occhio di Tablescope e posizionate ad almeno tre asteroidi di distanza ottengono +1 danno a tutti i loro laser. Altre astronavi e asteroidi possono interrompere la linea di vista."
+    },
+    {
+      "id": "tantrum",
+      "name": "TANTRUM HOUSE",
+      "subtitle": "Divertimento capovolto",
+      "description": "Quando viene colpito, capovolge un tavolo delle dimensioni di un asteroide nella direzione di tiro del laser, danneggiando tutte le astronavi su cui atterra. La distanza del capovolgimento e il danno sono determinati dal tipo di laser. Verde: raggio di 1-2 asteroidi, 1 danno; Giallo: raggio di 3-4 asteroidi, 2 danni; Rosso: raggio di 5-6 asteroidi, 3 danni."
+    }
+  ],
+  "factions": [
+    {
+      "id": "amboom",
+      "name": "AMBOOM",
+      "subtitle": "Letali",
+      "description": "Se un laser Amboom danneggia un’astronave o una base già danneggiata in un’iniziativa precedente, il bersaglio viene distrutto immediatamente e gli Amboom rivendicano i punti dalla distruzione."
+    },
+    {
+      "id": "argonauts",
+      "name": "AGRONAUTS",
+      "subtitle": "Resistenti",
+      "description": "Gli scudi degli Agronauts riducono il danno a 0 invece di diminuirlo solo di 1."
+    },
+    {
+      "id": "retroblast",
+      "name": "RETROBLAST",
+      "subtitle": "Vendicativi",
+      "description": "Se un’astronave Retroblast è stata danneggiata in un’iniziativa precedente, la potenza di tutti i suoi raggi laser viene raddoppiata."
+    },
+    {
+      "id": "solspear",
+      "name": "SOLSPEAR",
+      "subtitle": "Penetranti",
+      "description": "I laser gialli (quelli da 2 danni) dei Solspear perforano il primo bersaglio."
+    },
+    {
+      "id": "blackhole",
+      "name": "BLACKHOLE",
+      "subtitle": "All'arrembaggio!",
+      "description": "Quando un'astronave BlackHole spara, tutte le astronavi nemiche entro la distanza di un asteroide e non ancora colpite da uno dei suoi laser subiscono 1 danno. Conta per il conteggio dei danni del BlackHole e conta come un colpo andato a segno."
+    },
+    {
+      "id": "glyphon",
+      "name": "GLYPHON",
+      "subtitle": "Onda del vuoto.",
+      "description": "Se un laser Glyphon attraversa una tessera nemica senza colpire l'astronave, l'astronave nemica subisce comunque un danno pari alla potenza del raggio. Questo conta per il conteggio dei danni del Glyphon ma non conta come un colpo andato a segno."
+    }
+  ]
+}

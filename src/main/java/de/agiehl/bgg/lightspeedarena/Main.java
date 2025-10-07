@@ -18,7 +18,8 @@ public class Main {
         // Add a new Locale here to support a new language.
         List<Locale> supportedLocales = List.of(
                 Locale.GERMAN,
-                Locale.ENGLISH
+                Locale.ENGLISH,
+                Locale.ITALIAN
         );
 
         try {
