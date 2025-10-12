@@ -45,7 +45,7 @@ public class PdfGenerator {
         PdfDocument pdf = new PdfDocument(writer);
         pdf.setDefaultPageSize(PageSize.A4.rotate());
         Document document = new Document(pdf);
-        document.setMargins(20, 20, 20, 20);
+        document.setMargins(20, 20, 10, 20);
 
         HeaderFooterHandler handler = new HeaderFooterHandler(messages);
         pdf.addEventHandler(PdfDocumentEvent.START_PAGE, handler);
