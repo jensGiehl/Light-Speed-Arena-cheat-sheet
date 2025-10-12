@@ -15,8 +15,8 @@
     "base": "Gioco Base",
     "blackhole": "Espansione BlackHole",
     "glyphon": "Espansione Glyphon",
-    "kickstarter": "Asteroidi Sponsorizzati Kickstarter",
-    "sponsored.asteroids": "Asteroidi Sponsorizzati Promo"
+    "kickstarter": "Kickstarter Sponsored Asteroids",
+    "sponsored.asteroids": "Promo Sponsored Asteroids"
   },
   "comets": [
     {
@@ -59,55 +59,55 @@
       "id": "live4d",
       "name": "LIVE 4D",
       "subtitle": "Guardami!",
-      "description": "Gli scudi sono schermi pubblicitari. Ogni volta che uno scudo si attiva, il proprietario viene ricompensato con 1 punto."
+      "description": "Gli scudi sono schermi pubblicitari. Ogni volta che uno scudo si attiva, il proprietario guadagna 1 punto."
     },
     {
       "id": "saferspace",
       "name": "SAFERSPACE",
       "subtitle": "Il tuo sforzo, la tua ricompensa, al sicuro!",
-      "description": "Alla risoluzione della battaglia, il giocatore o i giocatori con il maggior numero di minerali ottengono punti bonus pari alla metà delle unità minerali totali raccolte, arrotondate per eccesso (+50% di punti dai minerali)."
+      "description": "Alla fine della battaglia, il giocatore o i giocatori con il maggior numero di minerali ottengono punti bonus pari alla metà del totale dei minerali raccolti, arrotondando per eccesso (+50% dei punti dai minerali in stiva)."
     },
     {
       "id": "rayrebuff",
       "name": "RAY REBUFF",
       "subtitle": "Boing",
-      "description": "Dopo aver ridotto i danni in arrivo come di consueto, gli scudi riflettono il laser a piena potenza sulla loro tangente. Il danno riflesso è neutrale e non conta per il conteggio dei danni di nessuna fazione."
+      "description": "Dopo aver ridotto il danno in arrivo come di consueto, gli scudi riflettono il laser sulla tangente. Aspetta, che? Lascia che ci pensi l'app ; ) Il danno riflesso è pari a quello del laser originale e non viene conteggiato nel totale dei danni di alcuna fazione."
     },
     {
       "id": "voidjugglers",
       "name": "VOID JUGGLERS",
       "subtitle": "Uno spettacolo sottosopra",
-      "description": "Le astronavi sparano in ordine di iniziativa inverso. Che wohs!"
+      "description": "Le astronavi sparano in ordine inverso di iniziativa. Olocatteps!"
     },
     {
       "id": "community",
       "name": "COMMUNITY ASTEROID",
       "subtitle": "Woooosh!",
-      "description": "Questo asteroide non può essere colpito e i laser lo attraversano, guadagnando +1 danno grazie alla spinta energetica della folla ruggente."
+      "description": "Questo asteroide non può essere colpito. I laser lo attraversano, ottenendo +1 al danno per il tifo sfrenato del pubblico."
     },
     {
       "id": "sorry",
       "name": "SORRY! I'M LATE",
       "subtitle": "Sono ancora in tempo?",
-      "description": "Tutte le astronavi arrivano sul campo di battaglia solo quando è il loro turno di sparare. Fino alla loro iniziativa, non sono in gioco."
+      "description": "Le astronavi arrivano sul campo solo quando tocca a loro sparare. Fino alla loro iniziativa, non sono in gioco."
     },
     {
       "id": "xmas",
-      "name": "SPACE XMAS",
+      "name": "SPACE X-MAS",
       "subtitle": "Acceso, spento, acceso...",
-      "description": "Tutti gli asteroidi lampeggiano. Sono in gioco solo durante le iniziative dispari."
+      "description": "Tutti gli asteroidi lampeggiano a intermittenza. Sono in gioco solo durante le iniziative dispari."
     },
     {
       "id": "tablescope",
       "name": "TABLESCOPE",
       "subtitle": "Gioca il tuo spazio",
-      "description": "Le astronavi in vista dell'occhio di Tablescope e posizionate ad almeno tre asteroidi di distanza ottengono +1 danno a tutti i loro laser. Altre astronavi e asteroidi possono interrompere la linea di vista."
+      "description": "Le astronavi nel campo visivo dell'occhio di Tablescope e posizionate ad almeno tre asteroidi di distanza ottengono +1 danno a tutti i loro laser. Altre astronavi e asteroidi possono interrompere la linea di vista."
     },
     {
       "id": "tantrum",
       "name": "TANTRUM HOUSE",
       "subtitle": "Divertimento capovolto",
-      "description": "Quando viene colpito, capovolge un tavolo delle dimensioni di un asteroide nella direzione di tiro del laser, danneggiando tutte le astronavi su cui atterra. La distanza del capovolgimento e il danno sono determinati dal tipo di laser. Verde: raggio di 1-2 asteroidi, 1 danno; Giallo: raggio di 3-4 asteroidi, 2 danni; Rosso: raggio di 5-6 asteroidi, 3 danni."
+      "description": "Quando viene colpito, questo asteroide ribalta un tavolo delle dimensioni di un asteroide nella direzione di fuoco del laser, danneggiando tutte le astronavi su cui atterra. La distanza del ribaltamento e il danno sono determinati dal tipo di laser: Verde - 1 a 2 asteroidi, 1 danno; Giallo - 3 a 4 asteroidi, 2 danni; Rosso - 5 a 6 asteroidi, 3 danni."
     }
   ],
   "factions": [
