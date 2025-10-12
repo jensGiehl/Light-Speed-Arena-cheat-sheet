@@ -33,47 +33,67 @@
     {
       "image": "/images/comets/BlackHole_live4d.png",
       "id": "live4d",
-      "expansionKey": "expansion.blackhole"
+      "expansionKey": "blackhole"
     },
     {
       "image": "/images/comets/BlackHole_saferspace.png",
       "id": "saferspace",
-      "expansionKey": "expansion.blackhole"
+      "expansionKey": "blackhole"
     },
     {
       "image": "/images/comets/Glyphon_rayrebuff.png",
       "id": "rayrebuff",
-      "expansionKey": "expansion.glyphon"
+      "expansionKey": "glyphon"
     },
     {
       "image": "/images/comets/Glyphon_voidjugglers.png",
       "id": "voidjugglers",
-      "expansionKey": "expansion.glyphon"
+      "expansionKey": "glyphon"
     },
     {
       "image": "/images/comets/kickstarter_community.png",
       "id": "community",
-      "expansionKey": "expansion.kickstarter"
+      "expansionKey": "kickstarter"
     },
     {
       "image": "/images/comets/kickstarter_sorry.png",
       "id": "sorry",
-      "expansionKey": "expansion.kickstarter"
+      "expansionKey": "kickstarter"
     },
     {
       "image": "/images/comets/kickstarter_xmas.png",
       "id": "xmas",
-      "expansionKey": "expansion.kickstarter"
+      "expansionKey": "kickstarter"
     },
     {
       "image": "/images/comets/tablescope.png",
       "id": "tablescope",
-      "expansionKey": "expansion.sponsored.asteroids"
+      "expansionKey": "sponsored.asteroids"
     },
     {
       "image": "/images/comets/tantrum.png",
       "id": "tantrum",
-      "expansionKey": "expansion.sponsored.asteroids"
+      "expansionKey": "sponsored.asteroids"
+    },
+    {
+      "image": "/images/comets/billiardarena.png",
+      "id": "billard",
+      "expansionKey": "arena-playmate"
+    },
+    {
+      "image": "/images/comets/torusarena.png",
+      "id": "torus",
+      "expansionKey": "arena-playmate"
+    },
+    {
+      "image": "/images/comets/pegasus.png",
+      "id": "pegasus",
+      "expansionKey": "promo"
+    },
+    {
+      "image": "/images/comets/diceTower.png",
+      "id": "dicetower",
+      "expansionKey": "promo"
     }
   ],
   "factions": [
@@ -100,12 +120,12 @@
     {
       "image": "/images/factions/BlackHole.png",
       "id": "blackhole",
-      "expansionKey": "expansion.blackhole"
+      "expansionKey": "blackhole"
     },
     {
       "image": "/images/factions/Glyphon.png",
       "id": "glyphon",
-      "expansionKey": "expansion.glyphon"
+      "expansionKey": "glyphon"
     }
   ]
 }

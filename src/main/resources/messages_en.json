@@ -15,7 +15,9 @@
     "blackhole": "BlackHole Expansion",
     "glyphon": "Glyphon Expansion",
     "kickstarter": "Kickstarter Sponsored Asteroids",
-    "sponsored.asteroids": "Promo Sponsored Asteroids"
+    "sponsored.asteroids": "Promo Sponsored Asteroids",
+    "arena-playmate": "Arena playmat",
+    "promo": "Promo"
   },
   "comets": [
     {
@@ -107,6 +109,30 @@
       "name": "TANTRUM HOUSE",
       "subtitle": "Flipping fun",
       "description": "When hit, it flips an asteroid-sized table in the laser's firing direction, damaging all spaceships it lands on. The flip distance and damage are determined by the laser type. Green: 1-2 asteroids range, 1 dmg; Yellow: 3-4 asteroids range, 2 dmg; Red: 5-6 asteroids range, 3 dmg."
+    },
+    {
+      "id": "billard",
+      "name": "BILLIARD ARENA",
+      "subtitle": "Ricochet beams",
+      "description": "Laser beams bounce once on the edge of the playmat with +1 damage. To play with this asteroid you need the Light Speed: Arena playmat, which should completely be visible in the picture with no tiles covering its white border."
+    },
+    {
+      "id": "torus",
+      "name": "TORUS ARENA",
+      "subtitle": "Shoot edgy!",
+      "description": "Laser beams exiting the playmat on one edge, come out from the opposite with +1 damage. To play with this asteroid you need the Light Speed: Arena playmat, which should completely be visible in the picture with no tiles covering its white border."
+    },
+    {
+      "id": "pegasus",
+      "name": "PEGASUS SPIELE",
+      "subtitle": "By players, for players",
+      "description": "Spaceships flying in formation (within 1 asteroid of distance of a friendly ship) gain +1 damage to all their laser beams."
+    },
+    {
+      "id": "dicetower",
+      "name": "THE DICE TOWER",
+      "subtitle": "For the people who play",
+      "description": "During each initiative, the spaceships mining the most mineral from this asteroid, gains the seal of excellence and score 2 extra points for it."
     }
   ],
   "factions": [

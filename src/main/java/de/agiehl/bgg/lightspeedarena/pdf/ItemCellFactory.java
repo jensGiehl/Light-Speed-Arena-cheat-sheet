@@ -85,7 +85,7 @@ public class ItemCellFactory {
         cell.add(name);
 
         if (item.getExpansionKey() != null && !item.getExpansionKey().isBlank()) {
-            String expansionKey = item.getExpansionKey().substring(item.getExpansionKey().lastIndexOf('.') + 1);
+            String expansionKey = item.getExpansionKey();
             String expansionName = messages.getExpansions().get(expansionKey);
             if (expansionName != null) {
                 Text star = new Text("★ ")

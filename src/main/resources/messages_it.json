@@ -15,8 +15,10 @@
     "base": "Gioco Base",
     "blackhole": "Espansione BlackHole",
     "glyphon": "Espansione Glyphon",
-    "kickstarter": "Kickstarter Sponsored Asteroids",
-    "sponsored.asteroids": "Promo Sponsored Asteroids"
+    "kickstarter": "Edizione Kickstarter",
+    "sponsored.asteroids": "Promo Sponsored Asteroids",
+    "arena-playmate": "Playmat Light Speed: Arena",
+    "promo": "Promo"
   },
   "comets": [
     {
@@ -108,6 +110,30 @@
       "name": "TANTRUM HOUSE",
       "subtitle": "Divertimento capovolto",
       "description": "Quando viene colpito, questo asteroide ribalta un tavolo delle dimensioni di un asteroide nella direzione di fuoco del laser, danneggiando tutte le astronavi su cui atterra. La distanza del ribaltamento e il danno sono determinati dal tipo di laser: Verde - 1 a 2 asteroidi, 1 danno; Giallo - 3 a 4 asteroidi, 2 danni; Rosso - 5 a 6 asteroidi, 3 danni."
+    },
+    {
+      "id": "billard",
+      "name": "BILLIARD ARENA",
+      "subtitle": "Raggi rimbalzanti",
+      "description": "I raggi laser rimbalzano una volta sul bordo del tappetino con +1 danno. Per usare questo asteroide è necessario il tappetino Light Speed: Arena, che deve essere completamente visibile nella foto senza tessere che ne coprano il bordo bianco."
+    },
+    {
+      "id": "torus",
+      "name": "TORUS ARENA",
+      "subtitle": "Spara ai margini!",
+      "description": "I raggi laser che escono dal tappetino da un lato rientrano dal lato opposto con +1 danno. Per usare questo asteroide è necessario il tappetino Light Speed: Arena, che deve essere completamente visibile nella foto senza tessere che ne coprano il bordo bianco."
+    },
+    {
+      "id": "pegasus",
+      "name": "PEGASUS SPIELE",
+      "subtitle": "Da giocatori, per giocatori",
+      "description": "Le astronavi che volano in formazione (entro 1 asteroide di distanza da un'astronave alleata) ottengono +1 danno a tutti i loro raggi laser."
+    },
+    {
+      "id": "dicetower",
+      "name": "THE DICE TOWER",
+      "subtitle": "Per chi gioca",
+      "description": "Durante ogni iniziativa, l'astronave che estrae più minerali da questo asteroide ottiene il sigillo di eccellenza e guadagna 2 punti extra."
     }
   ],
   "factions": [

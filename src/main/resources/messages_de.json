@@ -12,48 +12,50 @@
     "factions": "Fraktionen"
   },
   "expansions": {
-    "base": "Grundspiel",
-    "blackhole": "BlackHole Erweiterung",
-    "glyphon": "Glyphon Erweiterung",
-    "kickstarter": "Kickstarter Sponsored Asteroids",
-    "sponsored.asteroids": "Promo Sponsored Asteroids"
+    "base": "Basisspiel",
+    "blackhole": "BlackHole-Erweiterung",
+    "glyphon": "Glyphon-Erweiterung",
+    "kickstarter": "Kickstarter-Edition",
+    "sponsored.asteroids": "Promo-Erweiterung",
+    "arena-playmate": "Arena-Spielmatte",
+    "promo": "Promo-Erweiterung"
   },
   "comets": [
     {
       "id": "astrofuel",
       "name": "ASTROFUELLL",
       "subtitle": "Einmal voLLLtanken bitte!",
-      "description": "Trifft ein Laser diesen Asteroiden, erhöht sich die Stärke aller anderen Laser dieses Raumschiffs um +1."
+      "description": "Wenn ein Raumschiff diesen Asteroiden mit einem LLLasertrahl trifft, erhöht sich die Stärke aller anderen LLLaserstrahlen dieses Raumschiffs um 1."
     },
     {
       "id": "destinyammo",
       "name": "DESTINY AMMO",
-      "subtitle": "Feuerkraft auf Abruf",
-      "description": "Wird dieser Asteroid getroffen, feuert er mit seiner Bordkanone auf ein zufälliges gegnerisches Schiff in Sichtweite mit der Stärke des eintreffenden Lasers. Dieser Schuss ist neutral: Der verursachte Schaden zählt nicht zum Schadenskonto einer Fraktion."
+      "subtitle": "Feuerkraft auf Bestellung",
+      "description": "Wenn dieser Asteroid getroffen wird, schießt er mit seiner eingebauten Kanone auf ein zufälliges gegnerisches Raumschiff in Sichtweite. Der Schuss hat die gleiche Stärke wie der Laserstrahl, mit dem er aktiviert wurde. Allerdings gilt dieser Schaden als neutral und zählt nicht zu dem Schaden, den eine Person beigetragen hat."
     },
     {
       "id": "driftcola",
       "name": "DRIFT COLA",
-      "subtitle": "Die richtige DOSE Risiko",
-      "description": "Jeder Laserstrahl, der einen Treffer landet oder Mineralien abbaut und dabei eine befreundete Einheit knapp verfehlt (das Plättchen durchquert, aber die abgebildete Einheit nicht trifft), bringt dem Spieler 2 Bonuspunkte, Haarscharf!"
+      "subtitle": "Genau die richtige DOSE Risiko!",
+      "description": "Ihr erhaltet jeweils 2 Bonuspunkte für jeden Laserstrahl, der knapp an einer eigenen Einheit vorbeischießt (ihr Plättchen durchquert, ohne die Abbildung zu treffen) und danach eine gegnerische Einheit beschädigt oder Mineralien abbaut."
     },
     {
       "id": "novasnipe",
       "name": "NOVA SNIPE",
-      "subtitle": "Wir liefern über jede Distanz",
-      "description": "Jeder Laserstrahl, der einen Treffer landet oder Mineralien abbaut und dabei eine Entfernung von mehr als 28 cm (4 Asteroiden Abstand) überbrückt, bringt dem Spieler 3 zusätzliche Punkte für seine Fernkampfkünste."
+      "subtitle": "Wir liefern über jede Distanz!",
+      "description": "Ihr erhaltet jeweils 3 Bonuspunkte für jeden Laserstrahl, der aus einer Entfernung von mehr als 28 cm (entspricht 4 Asteroiden) gegnerische Einheiten beschädigt oder Mineralien abbaut."
     },
     {
       "id": "nugget",
       "name": "DER NUGGET",
-      "subtitle": "Halb so groß, doppelt so wertvoll!",
-      "description": "Schwierig zu treffen, dafür bringt jeder Treffer doppelt so viele Mineralien-Einheiten."
+      "subtitle": "Klein aber fein!",
+      "description": "Ein Treffer auf diesem winzigen Asteroiden baut doppelt so viele Ladungen Mineralien ab wie gewöhnlich."
     },
     {
       "id": "photonbright",
       "name": "PHOTONBRIGHT",
-      "subtitle": "Überdauern. Überstrahlen.",
-      "description": "Nach der Schlacht erhalten die fünf überlebenden Raumschiffe, die am nächsten an diesem Asteroiden dran liegen, jeweils 3 Punkte. Sie strahlen im Rampenlicht!"
+      "subtitle": "Schwebt im Rampenlicht!",
+      "description": "Am Ende der Auswertungsphase erhalten die 5 überlebenden Raumschiffe, die am nächsten an diesem Asteroiden liegen, jeweils 3 Bonuspunkte."
     },
     {
       "id": "live4d",
@@ -100,14 +102,38 @@
     {
       "id": "tablescope",
       "name": "TABLESCOPE",
-      "subtitle": "Dein Raum, dein Spiel.",
-      "description": "Raumschiffe, die sich in der Sichtlinie zu Tablescopes Auge befinden und mindestens drei Asteroiden entfernt sind, erhalten +1 Schaden für all ihre Laser. Andere Raumschiffe und Asteroiden können die Sichtlinie unterbrechen."
+      "subtitle": "Play your space",
+      "description": "Raumschiffe im Sichtfeld des Tablescope-Auges und mindestens drei Asteroiden entfernt erhalten +1 Schaden für ihre Laser. Andere Raumschiffe und Asteroiden können die Sichtlinie blockieren."
     },
     {
       "id": "tantrum",
       "name": "TANTRUM HOUSE",
-      "subtitle": "Flipping fun",
-      "description": "Wird er getroffen, schleudert er einen Tisch von der Größe eines Asteroiden in Schussrichtung des Lasers. Alle Raumschiffe, auf denen der Tisch landet, erleiden Schaden (SDN). Die Distanz und die Höhe des SDN hängen vom Lasertyp ab. Grün: 1-2 Distanz, 1 SDN; Gelb: 3-4 Distanz, 2 SDN; Rot: 5-6 Distanz, 3 SDN. Distanz in Asteroiden gemessen."
+      "subtitle": "Umlenkender Spaß",
+      "description": "Wenn dieser Asteroid getroffen wird, kippt er einen asteroidengroßen Tisch in Schussrichtung des Lasers und beschädigt alle Raumschiffe, auf denen er landet. Die Kippdistanz und der Schaden hängen vom Lasertyp ab: Grün - 1 bis 2 Asteroiden, 1 Schaden; Gelb - 3 bis 4 Asteroiden, 2 Schaden; Rot - 5 bis 6 Asteroiden, 3 Schaden."
+    },
+    {
+      "id": "billard",
+      "name": "BILLIARD ARENA",
+      "subtitle": "Abpraller-Laser",
+      "description": "Laserstrahlen prallen einmal am Rand der Spielmatte ab und verursachen +1 Schaden. Um mit diesem Asteroiden zu spielen, benötigt ihr die Light Speed: Arena-Spielmatte, die auf dem Foto vollständig sichtbar sein muss, ohne dass Plättchen den weißen Rand überdecken."
+    },
+    {
+      "id": "torus",
+      "name": "TORUS ARENA",
+      "subtitle": "Scharf an der Kante!",
+      "description": "Laserstrahlen, die an einer Kante der Spielmatte austreten, erscheinen an der gegenüberliegenden Seite wieder mit +1 Schaden. Um mit diesem Asteroiden zu spielen, benötigt ihr die Light Speed: Arena-Spielmatte, die auf dem Foto vollständig sichtbar sein muss, ohne dass Plättchen den weißen Rand überdecken."
+    },
+    {
+      "id": "pegasus",
+      "name": "PEGASUS SPIELE",
+      "subtitle": "Von Spielern, für Spieler",
+      "description": "Raumschiffe, die in Formation fliegen (innerhalb von 1 Asteroiden Entfernung zu einem verbündeten Schiff), erhalten +1 Schaden auf all ihre Laserstrahlen."
+    },
+    {
+      "id": "dicetower",
+      "name": "THE DICE TOWER",
+      "subtitle": "Für alle, die spielen",
+      "description": "Während jeder Initiative erhält das Raumschiff, dass die meisten Mineralien von diesem Asteroiden abbaut, das Siegel der Exzellenz und erzielt 2 Extrapunkte."
     }
   ],
   "factions": [
